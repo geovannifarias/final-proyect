@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="
+    sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container mt-5">
+       <div class="alert display-1 text-center">LISTADO DE SOLICITUDES DE SALUD</div>
+    </div>
+    <!---BUSCADOR-->
+    {% block buscador %}
+    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search"method="get">
+
+        <div class="input-group">
+            <input type="text" class="form-control bg-light border-0 small" placeholder="Buscar..." 
+            name="buscador" value="{{ request.GET.buscador }}">
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="submit">buscar</button>
+
+                <i class="fas fa-search fa-sm"></i>
+            </div>
+        </div>
+    </form>
+    {% endblock buscador %}
+    <!---FIN BUSCADOR-->
+
+    {% if mostrar %}
+        <table class="table table-sm">
+            <thead>
+                <tr class="table-dark">
+                    <th>ID SOLICITUD</th>
+                    <th>TIPO SOLICITUD</th>
+                    <th>NOMBRE</th>
+                    <th>APELLIDO PATERNO</th>
+                    <th>APELLIDO MATERNO</th>
+                    <th>RUT</th>
+                    <th>DV</th>
+                    <th>FNACIMIENTO</th>
+                    <th>ESTADO CIVIL</th>
+                    <th>DONANTE</th>
+                    <th>FSOLICITUD</th>
+                    <th>OBSERVACIONES</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for mos in mostrar %}
+                <tr> 
+                    <td>{{ mos.id_solicitud }}</td> 
+                    <td>{{ mos.ctipo_solicitud }}</td> 
+                    <td>{{ mos.nombres }}</td>
+                    <td>{{ mos.apellido_paterno }}</td>
+                    <td>{{ mos.apellido_materno }}</td>
+                    <td>{{ mos.rut}}</td>
+                    <td>{{ mos.dv}}</td>
+                    <td>{{ mos.fnacimiento}}</td>
+                    <td>{{ mos.cestado_civil}}</td>
+                    <td>{{ mos.cdonante }}</td>
+                    <td>{{ mos.fsolicitud}}</td>
+                    <td>{{ mos.tobservaciones }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    {% else %}
+        <div class="alert alert-danger"><h1>No se han escontrado datos</h1></div>
+    {% endif %}
+    <br>
+    <div class="col"><a href="/" class="btn p-2 btn-primary w-45 " style="float:right; margin-right: 50%;">VOLVER</a></div>
+</body>
+</html>
+
+
+
+
+
+<!--<td>
+    <a class="btn btn-success btn-small" href="actualizar/{{formulario.id}}">
+        <i class="bi bi-pencil-fill"></i>
+    </a>
+    <a class="btn btn-danger btn-small" href="eliminar/{{formulario.id}}">
+        <i class="bi bi-trash-fill"></i>
+    </a>
+</td>-->

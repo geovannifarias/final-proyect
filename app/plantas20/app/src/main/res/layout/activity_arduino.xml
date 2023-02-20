@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    tools:context=".Arduino">
+
+    <Button
+        android:id="@+id/main_btn_led_on"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LED ON"
+        android:onClick="ledOn"
+        />
+
+    <Button
+        android:id="@+id/main_btn_led_off"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LED OFF"
+        android:onClick="ledOnoff"
+        android:layout_below="@+id/main_btn_led_on"
+        />
+    <Button
+        android:id="@+id/main_btn_servo_on"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SERVO ON"
+        android:onClick="servoOn"
+        android:layout_below="@+id/main_btn_led_off"
+        />
+    <Button
+        android:id="@+id/main_btn_servo_off"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SERVO OFF"
+        android:onClick="servoOff"
+        android:layout_below="@+id/main_btn_led_off"
+        />
+
+
+  </RelativeLayout>

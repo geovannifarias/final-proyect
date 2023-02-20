@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">plantas 2.0</string>
+    <string name="name">Name</string>
+
+    // hint botones
+    <string name="btn_ingresar">Ingresar</string>
+    <string name="btn_registrar">Registrar</string>
+    <string name="btn_añadir">Agregar</string>
+    <string name="btn_volver">Volver</string>
+
+    // hint opciones de menu
+    <string name="op_menu_salir">Salir</string>
+    <string name="op_menu_perfil">Perfil</string>
+    <string name="op_menu_principal">Menu principal</string>
+
+    // hint edidt text
+    <string name="edit_text_nombre">Nombre</string>
+    <string name="edit_text_nombre_usuario">Nombre usuario</string>
+    <string name="edit_text_contraseña">Contraseña</string>
+    <string name="edit_text_confirmar_contraseña">Confirmar contraseña</string>
+
+    // hint titulo
+    <string name="text_titulo">Humedad </string>
+
+
+
+</resources>

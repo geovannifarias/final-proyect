@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container mt-5">
+       <div class="alert alert-info display-1 text-center">{{titulo}}</div>
+       <div class="row">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">FechaInicio:</th>
+                <th scope="col"></th>
+                <th scope="col"><div class="col-5">
+                    <input type="text" class="form-control" placeholder="Ingrese datos" aria-label="Ingrese datos">
+                  </div></th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">FechaTermino:</th>
+                <td></td>
+                <td><div class="col-5">
+                    <input type="text" class="form-control" placeholder="Ingrese datos" aria-label="Ingrese datos">
+                  </div></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">Nombre:</th>
+                <td></td>
+                <td><div class="col-5">
+                    <input type="text" class="form-control" placeholder="Ingrese datos" aria-label="Ingrese datos">
+                  </div></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">Responsable:</th>
+                <td ></td>
+                <td><div class="col-5">
+                    <input type="text" class="form-control" placeholder="Ingrese datos" aria-label="Ingrese datos">
+                  </div></td>
+              </tr>
+
+              <tr>
+                <th scope="row">Prioridad:</th>
+                <td ></td>
+                <td><div class="col-5">
+                    <input type="text" class="form-control" placeholder="Ingrese datos" aria-label="Ingrese datos">
+                  </div></td>
+              </tr>
+            </tbody>
+          </table>
+        <div class="col"><a href="/listarProyectos" class="btn p-2 btn-danger w-40">Volver</a></div>
+        <div class="col"><a href="/" class="btn p-2 btn-success w-40"style="float: right;">Guardar</a></div>
+       </div> 
+    </div>
+       
+</body>
+</html>

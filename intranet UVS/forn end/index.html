@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <title>RR.HH</title>
+</head>
+
+<body id="body">
+    <nav id="panel1" class="navbar bg-dark">
+        <div class="container-fluid">
+            <a href="/login"><button id="cerrar" button type="submit" class="btn btn-danger w-20">Cerrar
+                    Sesion</button></a>
+        </div>
+    </nav>
+    <nav id="panel2" class="navbar">
+        <div class="container-fluid">
+            <a class="navbar">
+                <ul class="navbar-nav">
+                    <img id="logo" src="https://assets.stickpng.com/images/585e4beacb11b227491c3399.png">
+                    <li><br>
+                        <h3 id="Nombre3">Nombre<br>RR.HH</h3>
+                    </li><br></br>
+                    <a href="#"><button id="boton4" class="btn btn-danger" type="submit">Mis Datos</button></a><br></br>
+                    <a href="#"><button id="boton4" class="btn btn-danger" type="submit">Documentos</button></a><br></br>
+                    <a href="#"><button id="boton4" class="btn btn-danger" type="submit">Solicitudes</button></a><br></br>
+                    <a href="#"><button id="boton4" class="btn btn-danger" type="submit">Colaboradores</button></a><br>
+                </ul>
+            </a>
+        </div>
+    </nav>
+    <div id="nav1">
+        <div class="container row">
+            <div class="col-6">
+                <br>
+                <h2 class="text">Ingresar nuevo colaborador</h2>
+                <br>
+                <form id="guardar">
+                    <div>
+                        <label for="rut" class="form-label text">Rut</label>
+                        <input type="text" class="form-control" id="rut" required>
+                    </div>
+                    <div>
+                        <label class="form-label text" for="nombre">Nombre</label>
+                        <input class="form-control" id="nombre" required>
+                    </div>
+                    <div>
+                        <label class="form-label text" for="apellido">Apellido</label>
+                        <input class="form-control" id="apellido" required>
+                    </div>
+                    <div>
+                        <label class="form-label text" for="telefono">Telefono</label>
+                        <input type="number" class="form-control" id="telefono" required>
+                    </div>
+                    <div>
+                        <label class="form-label text" for="correo">Correo</label>
+                        <input type="email" class="form-control" id="correo" required>
+                    </div>
+                    <div>
+                        <label class="form-label text" for="contraseña">Contraseña</label>
+                        <input class="form-control" id="contraseña" type="password" required>
+                    </div>
+                    <label class="form-label text" for="cargos">Cargos a seleccionar</label>
+                    <select class="form-select form-control" id="cargos" aria-label="Cargos">
+                        <option selected disabled>Seleccione un cargo </option>
+                        <option value="1">Gerente</option>
+                        <option value="2">Recursos Humanos</option>
+                        <option value="3">Operario</option>
+                      </select>
+                    <br>
+                    <div>
+                        <button class="btn btn-danger mt-1">Guardar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-6">
+                <br>
+                <h2 class="text">Lista de colaboradores</h2>
+                <br>
+                <table class="table table table-striped">
+                    <thead id="tabla">
+                        <tr>
+                            <th>Rut</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Telefono</th>
+                            <th>Correo</th>
+                            <th>Contraseña</th>
+                        </tr>
+                    </thead>
+                    <tbody id="mostrar">
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+
+        <div class="container row">
+            <div class="col-6">
+                <br><br>
+                <h2 class="text">Actualizar colaborador</h2>
+                <br>
+                    <div>
+                        <label for="rut" class="form-label text">Rut</label>
+                        <input type="text" class="form-control" id="rut_buscar" required />
+                        
+                    </div>
+
+                    <div>
+                        <button onclick="buscarPorRut()" class="btn btn-danger mt-1" data-bs-toggle="modal" data-bs-target="#modalActualizar">Buscar colaborador</button>
+                    </div>
+                <br>
+            </div>
+
+            <div class="col-6">
+                <br><br>
+                <h2 class="text">Eliminar colaborador</h2>
+                <br>
+                <form id="eliminar">
+                    <div>
+                        <label for="rut" class="form-label text">Rut</label>
+                        <input type="" class="form-control" id="rut_eliminar" required>
+                    </div>
+                    <br>
+                    <div>
+                        <button class="btn btn-danger mt-1">Eliminar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalActualizar" tabindex="-1" aria-labelledby="modalActualizarLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalActualizarLabel">Ingrese los nuevos datos del colaborador</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div style="visibility: hidden;">
+                        <label for="rut" class="form-label text">Rut</label>
+                        <input type="text" class="form-control" id="rut_actualizar" required>
+                    </div>
+                    <form id="actualizar">
+                        <div>
+                            <label class="form-label text" for="nombre">Nombre</label>
+                            <input class="form-control" id="nombre_actualizar" required>
+                        </div>
+                        <div>
+                            <label class="form-label text" for="apellido">Apellido</label>
+                            <input class="form-control" id="apellido_actualizar" required>
+                        </div>
+                        <div>
+                            <label class="form-label text" for="telefono">Telefono</label>
+                            <input type="number" class="form-control" id="telefono_actualizar" required>
+                        </div>
+                        <div>
+                            <label class="form-label text" for="correo">Correo</label>
+                            <input type="email" class="form-control" id="correo_actualizar" required>
+                        </div>
+                        <div>
+                            <label class="form-label text" for="contraseña">Contraseña</label>
+                            <input class="form-control" id="contraseña_actualizar" type="password" required>
+                        </div>
+                        <label class="form-label text" for="cargos_update">Cargos a seleccionar</label>
+                    <select class="form-select form-control" id="cargos_update" aria-label="Cargos">
+                        <option selected disabled>Seleccione un cargo </option>
+                        <option value="1">Gerente</option>
+                        <option value="2">Recursos Humanos</option>
+                        <option value="3">Operario</option>
+                      </select>
+                        <br>
+                        <div>
+                            <button class="btn btn-danger mt-1" data-bs-dismiss="modal">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script src="./index.js"></script>
+
+    <script> 
+        const buscarPorRut = async () => {
+            const rut = document.getElementById("rut_buscar").value; 
+            console.log(rut);
+            const response = await fetch(`http://localhost:3000/empleados/${rut}`);
+            const data = await response.json();
+            console.log(data);
+            document.getElementById('rut_actualizar').value = data.rut_colaborador;
+            document.getElementById('nombre_actualizar').value = data.nombre_colaborador;
+            document.getElementById('apellido_actualizar').value = data.apellido_colaborador;
+            document.getElementById('telefono_actualizar').value = data.telefono_colaborador;
+            document.getElementById('correo_actualizar').value = data.correo_electronico;
+            document.getElementById('contraseña_actualizar').value = data.contraseña;
+        }
+
+    </script>
+</body>
+
+</html>
+
+<style>
+    #body {
+        background-color: rgb(212, 211, 211);
+        color: rgb(0, 0, 0);
+        width: 100%;
+        margin-left: 0%;
+    }
+
+    .form-control {
+        width: 80%;
+    }
+
+    .btn {
+        background-color: rgb(197, 0, 0);
+        color: white;
+    }
+
+    #tabla {
+        background-color: rgb(197, 0, 0);
+        border: 1px solid rgb(255, 3, 3);
+        color: white;
+    }
+
+    #nav1 {
+        width: 60%;
+        height: 100%;
+        margin-left: 25%;
+        margin-top: -80%;
+    }
+
+    #boton4 {
+        width: 60%;
+        height: 50px;
+        margin: 4%;
+        float: left;
+        margin-left: 16%;
+        margin-top: 5%;
+        background-color: rgb(197, 0, 0);
+    }
+
+    #panel1 {
+        width: 100%;
+    }
+
+    #panel2 {
+        width: 20%;
+        height: 1250px;
+        background-color: rgb(158, 158, 158);
+    }
+
+    #cerrar {
+        width: 100%;
+        float: right;
+        margin-right: -1150%;
+        height: 30%;
+        background-color: rgba(197, 0, 0, 0.966);
+    }
+
+    #Nombre3 {
+        text-align: center;
+        float: left;
+        margin-left: 75%;
+        color: black;
+        margin-top: -165%;
+    }
+
+    #logo {
+        width: 60%;
+        height: 60%;
+        margin-top: -170%;
+        margin-left: 18%;
+    }
+</style>

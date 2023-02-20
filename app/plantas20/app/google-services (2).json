@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "418780927777",
+    "firebase_url": "https://green-health-c59bd-default-rtdb.firebaseio.com",
+    "project_id": "green-health-c59bd",
+    "storage_bucket": "green-health-c59bd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:418780927777:android:907154cbd73bf3699f9060",
+        "android_client_info": {
+          "package_name": "com.example.plantas20"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "418780927777-8ntd0s7k2aivga8q1i4m5543kp4arm7h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.plantas20",
+            "certificate_hash": "7082884168c34781aeb2174f8c59c011f7b60030"
+          }
+        },
+        {
+          "client_id": "418780927777-8rh8ngttclr13juhhejq2tsevdan1ve0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkYEhTxPWbaknKxOr0eN7t39vd2NPnVuU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "418780927777-8rh8ngttclr13juhhejq2tsevdan1ve0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
